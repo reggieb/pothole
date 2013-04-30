@@ -1,0 +1,29 @@
+<h1>Listing road_defects</h1>
+
+<table>
+  <tr>
+    <th>Diameter</th>
+    <th>Location</th>
+    <th>Description</th>
+    <th>Reporter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @road_defects.each do |road_defect| %>
+  <tr>
+    <td><%= road_defect.diameter %></td>
+    <td><%= road_defect.location %></td>
+    <td><%= road_defect.description %></td>
+    <td><%= road_defect.reporter_id %></td>
+    <td><%= link_to 'Show', road_defect %></td>
+    <td><%= link_to 'Edit', edit_road_defect_path(road_defect) %></td>
+    <td><%= link_to 'Destroy', road_defect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Road defect', new_road_defect_path %>

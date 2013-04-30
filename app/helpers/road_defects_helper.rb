@@ -1,0 +1,2 @@
+module RoadDefectsHelper
+end

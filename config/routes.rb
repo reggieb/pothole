@@ -1,4 +1,7 @@
 Pothole::Application.routes.draw do
+  resources :road_defects
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
