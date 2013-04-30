@@ -1,6 +1,6 @@
 Pothole::Application.routes.draw do
 
-  resources :users
+  resources :users, :only => [:index, :edit, :update]
   
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 

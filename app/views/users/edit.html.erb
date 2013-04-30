@@ -1,0 +1,12 @@
+<h1>Favourite colour</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<%= form_for(@user) do |form| %>
+
+  <%= form.label :favourite_colour, 'Please enter your favourite colour:' %><br>
+  <%= form.text_field :favourite_colour %>
+  
+  <%= form.submit %>
+
+<% end  %>

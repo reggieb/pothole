@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
-  def index
-  end
+  
+  before_filter :authenticate_user!
+  
 
-  def show
+  def edit
+    @user = current_user
+  end
+  
+  def update
+    @user = current_user
+    @user.update_attributes(params[:user])
+    redirect_to road_defects_path
   end
 end
