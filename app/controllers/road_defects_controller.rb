@@ -1,4 +1,7 @@
 class RoadDefectsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /road_defects
   # GET /road_defects.json
   def index
