@@ -19,7 +19,11 @@ end
 
 gem 'jquery-rails'
 
-gem 'devise'
+
+gem 'devise'                   # User authentication engine
+gem "omniauth-google-oauth2"   # Adds google login
+
+gem "figaro"    # Loads parameters into ENV
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
