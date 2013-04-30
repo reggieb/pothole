@@ -7,16 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if user_signed_in? %>
+  <ul class="nav">
+    <li><%= link_to_unless_current 'Road Defects', root_path %></li>
+    <li><%= link_to_unless_current 'Users', users_path %></li>
+    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+  </ul>
+<% end %>
+  
   
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 
 <%= yield %>
 
-<% if user_signed_in? %>
-  <p>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </p>
-<% end %>
 </body>
 </html>
