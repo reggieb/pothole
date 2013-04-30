@@ -5,7 +5,7 @@ class RoadDefectsController < ApplicationController
   # GET /road_defects
   # GET /road_defects.json
   def index
-    @road_defects = RoadDefect.all
+    @road_defects = current_user.road_defects
 
     respond_to do |format|
       format.html # index.html.erb

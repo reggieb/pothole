@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :favourite_colour
   
+  has_many :road_defects, :foreign_key => :reporter_id
   
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
     data = access_token.info

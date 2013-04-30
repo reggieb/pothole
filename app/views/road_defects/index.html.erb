@@ -1,10 +1,13 @@
-<h1>Listing road_defects</h1>
+<h1>Road Defects</h1>
 
+<% if @road_defects.empty? %>
+<p>You have no road defects entered</p>
+<% else %>
 <table>
   <tr>
+    <th>Description</th>
     <th>Diameter</th>
     <th>Location</th>
-    <th>Description</th>
     <th>Reporter</th>
     <th></th>
     <th></th>
@@ -13,17 +16,16 @@
 
 <% @road_defects.each do |road_defect| %>
   <tr>
+    <td><%= road_defect.description %></td>
     <td><%= road_defect.diameter %></td>
     <td><%= road_defect.location %></td>
-    <td><%= road_defect.description %></td>
-    <td><%= road_defect.reporter_id %></td>
+    <td><%= road_defect.reporter_name %></td>
     <td><%= link_to 'Show', road_defect %></td>
     <td><%= link_to 'Edit', edit_road_defect_path(road_defect) %></td>
     <td><%= link_to 'Destroy', road_defect, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+<% end %>
 
-<br />
-
-<%= link_to 'New Road defect', new_road_defect_path %>
+<p><%= link_to 'New Road defect', new_road_defect_path %></p>
